@@ -1,0 +1,31 @@
+name: Deploy Workflow
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        run:  actions/checkout@v4 # Checkout the code in the repository
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install Dependencies 
+        run: npm install  # Install the dependencies
+      - name: Run Tests
+        run: npm test # Run the tests
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        run:  actions/checkout@v4 # Checkout the code in the repository
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install Dependencies 
+        run: npm install  # Install the dependencies
+      - name: Build Project   
+        run: npm run build # Build the project
+      - name: Deploy
+        run: echo "Deploying..."  # Deploying
