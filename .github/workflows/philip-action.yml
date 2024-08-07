@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-        run:  actions/checkout@v4 # Checkout the code in the repository
+        run:  actions/checkout@v3 # Checkout the code in the repository
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install Dependencies 
@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-        run:  actions/checkout@v4 # Checkout the code in the repository
+        run:  actions/checkout@v3 # Checkout the code in the repository
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install Dependencies 
