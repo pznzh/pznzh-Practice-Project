@@ -2,7 +2,7 @@ name: Deploy Workflow
 on: workflow_dispatch
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows]
     steps:
       - name: Get Code
         run:  actions/checkout # Checkout the code in the repository
@@ -15,7 +15,7 @@ jobs:
       - name: Run Tests
         run: npm test # Run the tests
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows]
     steps:
       - name: Get Code
         run:  actions/checkout # Checkout the code in the repository
