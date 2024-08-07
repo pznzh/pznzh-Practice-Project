@@ -2,11 +2,7 @@ name: "Generate Central Site"
 
 on:
   workflow_dispatch:
-    inputs:
-      docs-artifact-name:
-        required: true
-        type: string
-
+   
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
