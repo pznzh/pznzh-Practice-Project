@@ -2,12 +2,12 @@ name: Deploy Workflow
 on: workflow_dispatch
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: USMCDWNCN505JFK
     steps:
       - name: Get Code
-        run:  actions/checkout@v3 # Checkout the code in the repository
+        run:  actions/checkout
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       - name: Install Dependencies 
@@ -15,7 +15,7 @@ jobs:
       - name: Run Tests
         run: npm test # Run the tests
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: USMCDWNCN505JFK
     steps:
       - name: Get Code
         run:  actions/checkout@v3 # Checkout the code in the repository
